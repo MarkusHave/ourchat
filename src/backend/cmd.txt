@@ -1,0 +1,39 @@
+Postgres dev container:
+  docker run --name pstgres -p 5432:5432 -e POSTGRES_PASSWORD=Qwerty7 -d postgres     # Run container
+  docker exec -ti pstgres psql -U postgres                                            # Access database in container
+
+Dev database info:
+  DB name:    postgres
+  password:   Qwerty7
+
+Postgres commands:
+  List databases:         \l
+  Connect to database:    \c db_name
+  List tables:            \dt or \dt+
+  Show table:             TABLE "table_name";
+  Describe table:         \d table_name
+  List available schema:  \dn
+  List users:             \du
+  Show commands:          \?
+
+Sequelize CLI:
+  Models:
+    npx sequelize-cli model:generate --name User --attributes userName:string,email:string,password:string                # User model
+    npx sequelize-cli model:generate --name Message --attributes groupId:integer,senderUserId:integer,message:string      # Message model
+    npx sequelize-cli model:generate --name Group --attributes groupName:string                                           # Group model
+    npx sequelize-cli model:generate --name GroupUsers --attributes userId:integer,groupId:integer                        # GroupUsers model TURHA
+
+  Migrations: 
+    npx sequelize-cli db:migrate              # Migrate all
+    npx sequelize-cli db:migrate:undo         # Undo most recent migration
+    npx sequelize-cli db:migrate:undo:all     # Undo all migrations
+
+  Seeds:
+    npx sequelize-cli seed:generate --name user           # Test user seed
+    npx sequelize-cli seed:generate --name message        # Test message seed
+    npx sequelize-cli seed:generate --name group          # Test group seed
+    npx sequelize-cli seed:generate --name groupUsers     # Test groupUsers seed
+    npx sequelize-cli db:seed:all                         # Seed database
+    npx sequelize-cli db:seed:all --seeders-path /path    # Seed specific folder
+    npx sequelize-cli db:seed:undo                        # Undo most recent seed
+    npx sequelize-cli db:seed:undo:all                    # Undo all seeds
