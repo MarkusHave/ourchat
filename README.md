@@ -22,7 +22,7 @@ App made with:
 
 ## Introduction video
 
-[https://youtu.be/Aum4JWdHMyw](https://youtu.be/Aum4JWdHMyw)
+[![introvideo](https://img.youtube.com/vi/Aum4JWdHMyw/0.jpg)](https://www.youtube.com/watch?v=Aum4JWdHMyw)
 
 ## Screenshots
 
